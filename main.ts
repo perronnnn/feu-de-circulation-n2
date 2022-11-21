@@ -14,6 +14,10 @@ function p_go () {
 input.onButtonPressed(Button.A, function () {
     ap += 1
 })
+function clignote () {
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    pins.digitalWritePin(DigitalPin.P16, 0)
+}
 function rouge () {
     pins.digitalWritePin(DigitalPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P1, 0)
@@ -24,6 +28,7 @@ function vert () {
     pins.digitalWritePin(DigitalPin.P1, 0)
     pins.digitalWritePin(DigitalPin.P2, 0)
 }
+p_stop()
 let rp = 0
 let ap = 0
 basic.forever(function () {
@@ -32,8 +37,17 @@ basic.forever(function () {
         basic.pause(500)
         p_stop()
         basic.pause(85.5)
+        clignote()
         basic.pause(85.5)
+        p_stop()
         basic.pause(85.5)
+        clignote()
+        basic.pause(85.5)
+        p_stop()
+        basic.pause(85.5)
+        clignote()
+        basic.pause(85.5)
+        p_stop()
         rp = 0
         ap = 0
     } else {
