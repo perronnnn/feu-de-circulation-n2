@@ -32,24 +32,18 @@ p_stop()
 let rp = 0
 let ap = 0
 basic.forever(function () {
-    if (rp == 1 && ap == 1) {
+    if (rp == 1 && ap >= 1) {
         p_go()
         basic.pause(500)
-        p_stop()
-        basic.pause(85.5)
-        clignote()
-        basic.pause(85.5)
-        p_stop()
-        basic.pause(85.5)
-        clignote()
-        basic.pause(85.5)
-        p_stop()
-        basic.pause(85.5)
-        clignote()
-        basic.pause(85.5)
-        p_stop()
+        for (let index = 0; index < 3; index++) {
+            p_stop()
+            basic.pause(85.5)
+            clignote()
+            basic.pause(85.5)
+        }
         rp = 0
         ap = 0
+        p_stop()
     } else {
         rp = 0
         while (rp == 0) {
