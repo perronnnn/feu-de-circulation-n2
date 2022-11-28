@@ -46,14 +46,12 @@ basic.forever(function () {
         p_stop()
     } else {
         rp = 0
-        while (rp == 0) {
-            vert()
-            basic.pause(500)
-            jaune()
-            basic.pause(500)
-            rouge()
-            rp += 1
-            basic.pause(500)
-        }
+        vert()
+        basic.pause(500)
+        jaune()
+        basic.pause(500)
+        rouge()
+        rp += 1
+        basic.pause(500)
     }
 })
